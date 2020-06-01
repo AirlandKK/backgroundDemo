@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peesystem.mapper.ExUserMapper" >
+  <resultMap id="BaseResultMap" type="com.peesystem.entity.pojo.ExUser" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="VARCHAR" />
+    <result column="nick" property="nick" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="mail" property="mail" jdbcType="VARCHAR" />
+    <result column="is_enable" property="isEnable" jdbcType="VARCHAR" />
+     <result column="photo_url" property="photoUrl" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  
+    <select id="selecUser" parameterType="com.peesystem.entity.pojo.ExUser" resultMap="BaseResultMap">
+       select cu.* from ex_user cu where cu.user_name=#{userName} and cu.user_password=#{userPassword}  
+     </select>
+  
+      <select id="selecUserByUserName" parameterType="com.peesystem.entity.pojo.ExUser" resultMap="BaseResultMap">
+  
+   select * from ex_user where user_name=#{userName} 
+  
+  </select>
+  
+  
+     <select id="selectBySelective" resultMap="BaseResultMap"  parameterType="com.peesystem.entity.pojo.ExUser" >
+      select p.* from ex_user p   where  1=1
+    <if test="userName!=null and userName!=''">
+     and p.user_name  like CONCAT(CONCAT('%',#{userName}),'%')
+    </if>
+  </select>
+  
+</mapper>

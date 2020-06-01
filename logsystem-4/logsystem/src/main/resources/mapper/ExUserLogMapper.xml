@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peesystem.mapper.ExUserLogMapper" >
+  <resultMap id="BaseResultMap" type="com.peesystem.entity.pojo.ExUserLog" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+     <result column="title" property="title" jdbcType="VARCHAR" />
+      <result column="userName" property="userName" jdbcType="VARCHAR" />
+      <result column="nick" property="nick" jdbcType="VARCHAR" /> 
+    <result column="content" property="content" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  
+  
+  
+     <select id="selectBySelective" resultMap="BaseResultMap"  parameterType="com.peesystem.entity.pojo.ExUserLog" >
+     select eul.*,(select eu.user_name  from   ex_user  eu where eu.user_id=eul.user_id) as userName,(select eu.nick  from   ex_user  eu where eu.user_id=eul.user_id) as nick  from  ex_user_log   eul
+     <where>
+    <if test="userId!=null and userId!=''">
+     and eul.user_id  like CONCAT(CONCAT('%',#{userId}),'%')
+    </if>
+        <if test="contentParam!=null and contentParam!=''">
+     and CONVERT (eul.content USING utf8)  like CONCAT(CONCAT('%',#{contentParam}),'%')
+    </if>
+       <if test="nick!=null and nick!=''">
+     and eul.user_id  in (select er.user_id  from  ex_user  er where er.nick like CONCAT(CONCAT('%',#{nick}),'%'))
+    </if>
+    </where>
+     order  by  eul.create_time desc
+     </select>
+   
+  
+</mapper>

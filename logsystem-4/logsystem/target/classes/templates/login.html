@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" class="uk-height-1-1">
+<head>
+    <meta charset="UTF-8"/>
+    <title>系统登录</title>
+    <link rel="stylesheet" href="css/uikit.gradient.min.css" />
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: skyblue;">
+
+<div>
+    <div style="width: 300px; margin: 0 auto;margin-top: 400px;text-align: center; border: #d6e9c6 1px solid">
+        <h1>登录</h1>
+        <form class="uk-panel uk-panel-box uk-form" method="post" action="loginPost">
+            <div class="uk-form-row">
+                <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Username" name="username"/>
+            </div>
+            <div class="uk-form-row">
+                <input class="uk-width-1-1 uk-form-large" type="password" placeholder="Password" name="password"/>
+            </div>
+            <div class="uk-form-row">
+                <button class="btn btn-primary" type="button" onclick="login();">登录</button>
+                <button class="btn btn-primary" type="button" onclick="register();">注册</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    
+    function login() {
+        $('form').submit()
+    }
+
+    function register() {
+        window.location.href="register";
+    }
+
+</script>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>C语言教学演示和学习系统</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="referrer" content="never"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+<style>
+    ul, li{
+        display: block;
+        background-color: #d6e9c6;
+    }
+    #del{
+        display: none;
+    }
+
+
+
+
+</style>
+
+</head>
+
+<body>
+    <div style="width: 1600px; margin:0 auto;}">
+        <div class="container-fluid">
+           <div class="row-fluid">
+            <div class="span12" style="border: #0e90d2 1px solid">
+                <div class="span12" style="background-color: #7aba7b; text-align: center;"><h3>C语言教学演示和学习系统</h3></div>
+                <div class="row-fluid">
+                    <div class="span2">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+                                C语言教程
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="getResource('dataType')">基本数据类型</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="getResource('operation')">运算符和表达式</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="getResource('order')">顺序结构</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="getResource('function')">简单函数</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="getResource('choose')">选择结构</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="collapse secondmenu">循环结构</a>
+                                <ul class="nav nav-list">
+                                    <li>
+                                        <a href="javascript:void(0);">单层循环</a>
+                                        <ul class="nav nav-list">
+                                            <li>
+                                                <a href="javascript:void(0);" onclick="getResource('while')">while语句</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" onclick="getResource('for')">for语句</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="test">
+                                        <a href="javascript:void(0);" onclick="getResource('double-loop')">双层循环<a href="#" id="del">删除</a><a href="#" id="add">添加</a></a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);">简单数组</a>
+                                <ul class="nav nav-list">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('1-array')">一维数组</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('str-array')">字符数组</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('2-array')">二维数组</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);">复杂指针</a>
+                                <ul class="nav nav-list">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('pointer-array')">指针类型数组</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('2-pointer')">二级指针</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('2-array-row-pointer')">二维数组行指针</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('2-array-col-pointer')">二维数组列指针</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('order-pointer')">命令行参数</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);">结构体</a>
+                                <ul class="nav nav-list">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('in-out-struct')">输入和输出</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('array-struct')">结构体数组</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('pointer-struct')">结构体指针</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('fun-struct')">结构体函数</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);">动态内存分配和单链表</a>
+                                <ul class="nav nav-list">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('vim')">动态内存分配</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('create-link')">单链表建立</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('out-link')">单链表输出</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);">文件</a>
+                                <ul class="nav nav-list">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('char-file')">以字符方式读写文件</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('str-file')">以字符串方式读写文件</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('block-link')">以数据块方式读写文件</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="getResource('format-link')">以格式化方式读写文件</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="span5">
+                        <div class="span12">
+                            <p align="right" style="margin-left: 30px"><h3>正文内容</h3></p>
+                            <p id="explain" style="width: 95%; margin:0 auto;">
+                                2222
+                            </p>
+                        </div>
+                        <p style="padding-top: 30px"><h4 class="text-success">编译/执行 C 程序</h4></p>
+                        <div style="border: #d9edf7 1px solid; background-color: aliceblue; border-radius:5px">
+                            <p><h4>实例</h4></p>
+                            <p style="border: #d9edf7 1px solid; width: 95%; margin:0 auto;background-color: white; margin-bottom: 5px;border-radius:5px">
+                                <textarea rows="18" style="width: 98%;border:0px;white-space:pre;" readonly id="data"></textarea>
+                            </p>
+                            <p><button class="btn btn-primary" type="button" onclick="runExample();">运行实例</button></p>
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <p><h4 class="text-success">仿写代码:</h4></p>
+                                <p>
+                                    <textarea rows="20" style="width: 97%;border: lightsteelblue 1px solid" id="resource"></textarea>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span12">
+                                <div class="span6">
+                                    <p align="left" style="margin-left: 30px">
+                                        <button class="btn" type="button" onclick="clearResource();">清除代码</button>
+                                    </p>
+                                </div>
+                                <div class="span3">
+                                    <div class="btn-group">
+                                        <button class="btn " type="button" onclick="return saveCode();">保存</button>
+                                        <button class="btn btn-primary" type="button" onclick="run();">上传本地文件</button>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <p align="right" style="margin-left: 30px">
+                                        <button class="btn btn-primary" type="button" onclick="run();">点击运行</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <p><h4 class="text-info">运行结果:</h4></p>
+                                <p><textarea rows="15" style="width: 97%;border:0px;white-space:pre;" readonly id="result"></textarea></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        getResource('start');
+        getMenu();
+    });
+
+    $("#test").hover(function () {
+        $("#del").css("display", "block")
+    });
+    $("#test").mouseout(function () {
+        $("#del").css("display", "none")
+    });
+
+
+    /*/!**
+     * 获取导航栏
+     *!/
+    function getMenu() {
+        $.post("menu/menuList", function(result){
+            console.log(result);
+            var list = result.content;
+            for(var i=0;i<list.length; i++){
+
+            }
+        });
+    }
+     */
+     
+     
+    /**
+     * 执行代码
+     */
+    function run() {
+        var val = $("#resource").val();
+        $.post("course/runApp",{resource: val} ,function(result){
+            $("#result").val(result.data);
+        });
+    }
+
+    /**
+     * 运行实例
+     */
+    function runExample() {
+        var data = $("#data").val();
+        $("#resource").val(data);
+        run();
+    }
+
+    /**
+     * 清除代码编辑框
+     */
+    function clearResource(){
+        $("#resource").val('');
+    }
+
+    /**
+     * 上传本地文件
+     * */
+    function uploadLocalFile() {
+
+    }
+    /**
+     * 下载代码
+     */
+    function saveCode() {
+        var val = $("#resource").val();
+        if(val == null || val == ""){
+            alert("内容不能为空");
+            return;
+        }
+        $.post("file/downloadCode",{code: val} ,function(result){
+            $("#result").val(result);
+            window.location.href="file/download?fileName="+result.fileName;
+        });
+
+    }
+
+    /**
+     * 显示知识点对应的代码
+     * @param type
+     */
+    function getResource(type) {
+        $.get("course/getResource?type="+type, function(result){
+            console.log(result.data);
+            $("#data").val(result.data);
+        });
+    }
+</script>
